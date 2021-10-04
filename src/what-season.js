@@ -16,6 +16,17 @@ export default function getSeason(date) {
     return 'Unable to determine the time of year!'
   }
 
+  try {
+    let d = new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds());
+    console.log(d);
+    console.log(date);
+  
+    if (d.getTime() !== date.getTime()) {
+      throw new Error('Invalid date!');  
+    } 
+  } catch (error) {
+    throw new Error('Invalid date!');
+  }
 
   try {
     let m = date.getMonth();

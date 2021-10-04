@@ -13,11 +13,12 @@ import { NotImplementedError } from '../extensions/index.js';
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-export default function createDreamTeam(/* members */) {
+export default function createDreamTeam(members) {
   let dreamTeam = '';
+  if (!Array.isArray(members)) return false;
   for (let i = 0; i < members.length; i++) {
       if (typeof members[i] === 'string') {
-          dreamTeam += members[i][0].toUpperCase();
+          dreamTeam += members[i].trim()[0].toUpperCase();
       }    
   }
   let arr = dreamTeam.split('');

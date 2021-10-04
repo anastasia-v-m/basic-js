@@ -14,7 +14,8 @@ import { NotImplementedError } from '../extensions/index.js';
  * ]) => 3`
  *
  */
-export default function countCats(/* matrix */) {
+export default function countCats(matrix) {
+  let arr = matrix;
   let cats = 0;
   for(let i = 0; i < arr.length; i++){
       let index;
